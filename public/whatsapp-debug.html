@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Sandbox Troubleshooting</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+        h1 {
+            color: #25D366;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step {
+            background: #333;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #25D366;
+        }
+        .btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #128C7E;
+        }
+        .result {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success { background: #1B5E20; color: #4CAF50; }
+        .error { background: #B71C1C; color: #F44336; }
+        .info { background: #0D47A1; color: #2196F3; }
+        .warning { background: #E65100; color: #FF9800; }
+        .contact-info {
+            background: #4A4A4A;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .phone {
+            font-size: 18px;
+            font-weight: bold;
+            color: #25D366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 WhatsApp Sandbox Troubleshooting</h1>
+        
+        <div class="step">
+            <h3>🔍 Step 1: Check Sandbox Status</h3>
+            <p>First, let's check your current Twilio sandbox configuration and recent message delivery status.</p>
+            <button class="btn" onclick="checkSandboxStatus()">Check Sandbox Status</button>
+        </div>
+
+        <div class="step">
+            <h3>📞 Step 2: Join WhatsApp Sandbox</h3>
+            <p>If you haven't joined the sandbox yet, follow these steps:</p>
+            <div class="contact-info">
+                <p><strong>1. Add this contact to your WhatsApp:</strong></p>
+                <p class="phone">+1 415 523 8886</p>
+                <p><strong>2. Send this message:</strong></p>
+                <p class="phone">join <span id="sandboxCode">your-sandbox-code</span></p>
+                <p><em>You should receive a confirmation message from Twilio</em></p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🧪 Step 3: Send Test Message</h3>
+            <p>Once you've joined the sandbox, test the message delivery:</p>
+            <button class="btn" onclick="sendTestMessage()">Send Test WhatsApp Message</button>
+        </div>
+
+        <div class="step">
+            <h3>🎯 Step 4: Test Studio Chat</h3>
+            <p>Finally, test the complete studio chat flow:</p>
+            <button class="btn" onclick="window.open('/collab-chat', '_blank')">Open Studio Chat</button>
+        </div>
+
+        <div id="result"></div>
+        
+        <div class="step">
+            <h3>❓ Still Not Working?</h3>
+            <p><strong>Common Issues:</strong></p>
+            <ul>
+                <li>Wrong phone number format in WhatsApp</li>
+                <li>Sandbox session expired (rejoin required)</li>
+                <li>Twilio account not verified</li>
+                <li>WhatsApp number not associated with sandbox</li>
+            </ul>
+            <p><strong>Alternative Contact:</strong></p>
+            <p>📧 Email: harshaparisha@gmail.com</p>
+            <p>📱 Direct WhatsApp: +91 7013706173</p>
+        </div>
+    </div>
+
+    <script>
+        const resultDiv = document.getElementById('result');
+        
+        function showResult(message, type = 'info') {
+            resultDiv.innerHTML = `<div class="result ${type}">${message}</div>`;
+        }
+        
+        async function checkSandboxStatus() {
+            showResult('🔍 Checking Twilio sandbox status...', 'info');
+            
+            try {
+                const response = await fetch('/api/check-sandbox');
+                const result = await response.json();
+                
+                if (response.ok) {
+                    const messages = result.sandbox.recentMessages;
+                    let statusMessage = `✅ Sandbox Status Check Complete\n\n`;
+                    statusMessage += `From: ${result.sandbox.fromNumber}\n`;
+                    statusMessage += `To: ${result.sandbox.toNumber}\n\n`;
+                    statusMessage += `Recent Messages (${messages.length}):\n`;
+                    
+                    messages.forEach((msg, i) => {
+                        statusMessage += `${i + 1}. ${msg.sid.slice(-8)} - Status: ${msg.status}`;
+                        if (msg.errorCode) {
+                            statusMessage += ` (Error: ${msg.errorCode})`;
+                        }
+                        statusMessage += `\n`;
+                    });
+                    
+                    statusMessage += `\n📋 Next Steps:\n`;
+                    result.instructions.forEach((step, i) => {
+                        statusMessage += `${i + 1}. ${step}\n`;
+                    });
+                    
+                    showResult(statusMessage, messages.length > 0 ? 'success' : 'warning');
+                } else {
+                    showResult(`❌ Status Check Failed: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showResult(`💥 Error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function sendTestMessage() {
+            showResult('📤 Sending test WhatsApp message...', 'info');
+            
+            try {
+                const response = await fetch('/api/check-sandbox', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        testMessage: '🧪 Manual Test from Troubleshooting Page\\n\\nIf you receive this, WhatsApp integration is working!\\n\\nTime: ' + new Date().toLocaleString()
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    showResult(
+                        `✅ Test Message Sent Successfully!\\n\\n` +
+                        `Message ID: ${result.details.messageSid}\\n` +
+                        `Status: ${result.details.status}\\n` +
+                        `To: ${result.details.to}\\n` +
+                        `From: ${result.details.from}\\n\\n` +
+                        `Check your WhatsApp for the test message!`,
+                        'success'
+                    );
+                } else {
+                    showResult(`❌ Test Failed: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showResult(`💥 Error: ${error.message}`, 'error');
+            }
+        }
+    </script>
+</body>
+</html>
