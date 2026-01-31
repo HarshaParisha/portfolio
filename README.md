@@ -16,24 +16,7 @@
 - **Firebase Backend** - Real-time database and analytics
 - **Fully Responsive** - Optimized for all devices
 
-## 🚀 Quick Start
 
-```bash
-# Clone the repository
-git clone https://github.com/HarshaParisha/portfolio.git
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your credentials
-
-# Run development server
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) to see your portfolio.
 
 ## 🛠️ Tech Stack
 
@@ -51,68 +34,6 @@ Visit [http://localhost:3000](http://localhost:3000) to see your portfolio.
 - Twilio (WhatsApp)
 - Finnhub (Stock Data)
 
-## 📦 Deployment
-
-Deploy to your favorite platform in minutes:
-
-### Vercel (Recommended)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/HarshaParisha/portfolio)
-
-### Railway
-```bash
-railway login
-railway init
-railway up
-```
-
-### Render
-Connect your repository at [render.com](https://render.com) - `render.yaml` is pre-configured.
-
-**📖 Detailed deployment guide:** [DEPLOYMENT.md](./DEPLOYMENT.md)
-
-## 🔑 Environment Variables
-
-Required variables (see `.env.example` for template):
-
-```env
-# Email (Brevo)
-BREVO_SMTP_KEY=
-SMTP_HOST=smtp-relay.brevo.com
-SMTP_PORT=587
-
-# WhatsApp (Twilio)
-TWILIO_ACCOUNT_SID=
-TWILIO_AUTH_TOKEN=
-
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-# ... (see .env.example for complete list)
-```
-
-## 📂 Project Structure
-
-```
-portfolio/
-├── src/
-│   ├── app/              # Next.js app router pages
-│   ├── components/       # React components
-│   ├── lib/              # Utilities and services
-│   └── data/             # Static content
-├── public/               # Static assets
-├── Dockerfile            # Docker configuration
-├── railway.json          # Railway deployment
-└── render.yaml           # Render deployment
-```
-
-## 🧪 Scripts
-
-```bash
-npm run dev      # Start development server
-npm run build    # Build for production
-npm start        # Start production server
-npm run lint     # Run ESLint
-```
 
 ## 📄 License
 
