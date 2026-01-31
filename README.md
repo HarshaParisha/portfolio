@@ -1,12 +1,13 @@
 # Portfolio - Harsha Parisha
 
-> A modern, interactive portfolio showcasing my journey as a developer, leader, and market enthusiast.
+A modern, interactive portfolio built with Next.js 15, TypeScript, and Tailwind CSS. Features 3D animations, real-time stock data, and seamless contact integration.
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.4-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+**[Live Demo](#) • [Documentation](./DEPLOYMENT.md)**
 ## ✨ Features
 
 - **Interactive 3D Elements** - Powered by Three.js and React Three Fiber
