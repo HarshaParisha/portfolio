@@ -44,8 +44,7 @@ This project is licensed under the MIT License.
 **Harsha Parisha**
 
 - GitHub: [@HarshaParisha](https://github.com/HarshaParisha)
-- Email: onestop.ai007@gmail.com
-
+- Email:harshaparisha@gmail.com
 ---
 
-<p align="center">Built with ❤️ using Next.js</p>
+>
