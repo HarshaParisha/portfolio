@@ -6,46 +6,48 @@ import { SiTypescript, SiNextdotjs, SiTailwindcss, SiSpringboot, SiStreamlit, Si
 
 const projectsData = [
   {
-    id: 'webscraper-pro',
-    title: 'WebScraper Pro',
-    subtitle: 'Scraping Platform',
-    description: 'A comprehensive web scraping solution that extracts text, images, and PDFs from websites with enterprise-grade tools and modern UI.',
-    technologies: [
-      { name: 'Python', icon: FaPython, color: 'text-blue-400' },
-      { name: 'Streamlit', icon: SiStreamlit, color: 'text-red-500' },
-      { name: 'BeautifulSoup', icon: FaPython, color: 'text-green-400' },
-      { name: 'CSS3', icon: FaCss3Alt, color: 'text-blue-500' }
-    ],
-    metrics: [
-      'Improved data extraction accuracy by 85%',
-      'Reduced scraping time by 60%',
-      'Enhanced user experience by 92%',
-      'Streamlined workflow efficiency by 70%'
-    ],
-    imageUrl: '/images/webscraper-project.jpg',
-    githubUrl: 'https://github.com/HarshaParisha/WebScraper-Pro',
-    liveUrl: 'https://webscraper-pro.streamlit.app/',
-    videoUrl: 'https://www.youtube.com/@WebScraperPro'
-  },
-  {
-    id: 'amalgam',
-    title: 'Amalgam',
-    subtitle: 'Portfolio Tracker',
-    description: 'A comprehensive web app that helps users monitor and analyze investments with real-time stock data and insights.',
+    id: 'scanmymeds',
+    title: 'ScanMyMeds',
+    subtitle: 'Medicine Verification Platform',
+    description: 'A smart platform to scan or search medicines and instantly verify their authenticity and safety.',
     technologies: [
       { name: 'React', icon: FaReact, color: 'text-cyan-400' },
-      { name: 'Spring Boot', icon: SiSpringboot, color: 'text-green-500' },
-      { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-500' }
+      { name: 'Node / Serverless', icon: FaJs, color: 'text-yellow-400' },
+      { name: 'Image Scanning & OCR', icon: FaHtml5, color: 'text-orange-500' },
+      { name: 'Verification APIs', icon: SiNextdotjs, color: 'text-black' }
     ],
     metrics: [
-      'Portfolio analytics with real-time updates',
-      'Dynamic graphs for visual insights',
-      'Personalized stock data using live APIs'
+      'Medicine scanning & lookup',
+      'Fake vs genuine detection',
+      'Quick safety verification',
+      'Clean, easy-to-use interface'
     ],
-    imageUrl: '/images/amalgam-project.jpg',
-    githubUrl: 'https://github.com/HarshaParisha/amalgam',
-    liveUrl: 'https://amalgam.example.com',
-    videoUrl: 'https://www.youtube.com/@Amalgam'
+    imageUrl: '/images/scanmymeds-project.jpg',
+    githubUrl: '',
+    liveUrl: 'https://scanmymeds.lovable.app/',
+    videoUrl: ''
+  },
+  {
+    id: 'onestopai',
+    title: 'OneStop AI',
+    subtitle: 'AI Productivity Hub',
+    description: 'An all-in-one platform that brings multiple AI tools together to help users create content, research, analyze data, and automate tasks efficiently.',
+    technologies: [
+      { name: 'React', icon: FaReact, color: 'text-cyan-400' },
+      { name: 'AI APIs (LLMs)', icon: SiTypescript, color: 'text-purple-400' },
+      { name: 'Tailwind / CSS', icon: SiTailwindcss, color: 'text-blue-400' },
+      { name: 'Node / Serverless Backend', icon: FaJs, color: 'text-yellow-400' }
+    ],
+    metrics: [
+      'Unified access to multiple AI tools',
+      'Smart content generation & insights',
+      'Productivity automation and workflows',
+      'Clean, adaptive UI for fast usage'
+    ],
+    imageUrl: '/images/onestopai-project.jpg',
+    githubUrl: '',
+    liveUrl: 'https://onestopai.lovable.app/',
+    videoUrl: ''
   }
 ];
 

@@ -29,7 +29,7 @@ export const leadershipData: LeadershipExperience[] = [
     year: '2024',
     title: 'Building OneStop AI',
     organization: 'OneStop AI',
-    organizationUrl: 'https://onestop-ai.com',
+    organizationUrl: 'https://onestopai.lovable.app/',
     duration: '2024',
     achievements: [
       'Founded and led the development of OneStop AI — a full-stack platform that aggregates over 100 AI tools',
@@ -44,7 +44,7 @@ export const leadershipData: LeadershipExperience[] = [
     year: '2023',
     title: 'Designing for Impact',
     organization: 'Next24Tech & Bharat Intern',
-    organizationUrl: 'https://next24tech.com',
+    organizationUrl: 'https://www.linkedin.com/company/next24tech-technology-services',
     duration: '2023',
     achievements: [
       'Product Design Intern at Next24Tech: Crafted user-centric interfaces and responsive SaaS UI/UX systems using Figma',
@@ -71,7 +71,7 @@ export const leadershipData: LeadershipExperience[] = [
     year: '2021',
     title: 'The Spark Begins',
     organization: 'Competitive Esports',
-    organizationUrl: 'https://esports.com',
+    organizationUrl: 'https://theesports.club/',
     duration: '2021',
     achievements: [
       'Immersed in competitive esports before writing first line of code, learning strategy and teamwork',
