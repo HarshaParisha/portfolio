@@ -13,7 +13,7 @@ const navigationItems = [
   { name: 'Leadership', href: '#leadership', icon: FaCrown },
   { name: 'Certifications', href: '#certifications', icon: FaCertificate },
   { name: 'Visual Stories', href: '#visual-stories', icon: FaPaintBrush },
-  { name: 'Resume', href: 'https://drive.google.com/file/d/1vvZSWHnlD9kt0ODVoi0SnWtpF-4AYmRz/view?usp=sharing', icon: FaFileAlt, external: true }
+  { name: 'Resume', href: 'https://drive.google.com/file/d/1cK0IWRrskgcJa6ECgYxxt5DXE9yxgupE/view?usp=sharing', icon: FaFileAlt, external: true }
 ];
 
 // Mobile navigation items (condensed for bottom bar)

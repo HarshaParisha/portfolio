@@ -157,7 +157,7 @@ export default function HeroSection() {
             </motion.button>
             
             <motion.a
-              href="https://drive.google.com/file/d/1vvZSWHnlD9kt0ODVoi0SnWtpF-4AYmRz/view?usp=sharing"
+              href="https://drive.google.com/file/d/1cK0IWRrskgcJa6ECgYxxt5DXE9yxgupE/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent border-2 border-gray-500 text-gray-300 hover:bg-gray-500 hover:text-white px-6 sm:px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 w-full sm:min-w-[200px] sm:w-auto justify-center text-sm sm:text-base"
