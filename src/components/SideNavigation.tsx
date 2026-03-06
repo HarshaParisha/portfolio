@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaSun, FaMoon, FaUser, FaCode, FaProjectDiagram, FaHome, FaFileAlt, FaGraduationCap, FaCrown, FaCertificate, FaPaintBrush, FaBars, FaTimes } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
-const navigationItems = [
+const navigationItems: { name: string; href: string; icon: IconType; external?: boolean }[] = [
   { name: 'Home', href: '#home', icon: FaHome },
   { name: 'About', href: '#about', icon: FaUser },
   { name: 'Education', href: '#education', icon: FaGraduationCap },
@@ -17,7 +18,7 @@ const navigationItems = [
 ];
 
 // Mobile navigation items (condensed for bottom bar)
-const mobileNavItems = [
+const mobileNavItems: { name: string; href: string; icon: IconType; external?: boolean }[] = [
   { name: 'Home', href: '#home', icon: FaHome },
   { name: 'About', href: '#about', icon: FaUser },
   { name: 'Skills', href: '#skills', icon: FaCode },
